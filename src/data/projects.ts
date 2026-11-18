@@ -5,7 +5,6 @@ export type Project = {
   technologies: string[]
   githubUrl: string | null
   blogUrl?: string
-  placeholder?: boolean
   liveUrl?: string
 }
 
@@ -15,7 +14,6 @@ export const projects: Project[] = [
     title: 'Project 01',
     description: 'Packed edges speed up graph scans but make inserts costly.',
     technologies: ['Python', 'C++', 'CSR Graphs', 'Spatial Indexing'],
-    placeholder: true,
     githubUrl: null,
   },
   {
@@ -23,7 +21,6 @@ export const projects: Project[] = [
     title: 'Project 02',
     description: 'Larger batches trade data freshness for write throughput.',
     technologies: ['Kafka', 'Spark', 'Parquet'],
-    placeholder: true,
     githubUrl: null,
   },
   {
@@ -31,7 +28,6 @@ export const projects: Project[] = [
     title: 'Project 03',
     description: 'Caching drops repeat reads at the cost of stale results.',
     technologies: ['Read-through Cache', 'TTL', 'Cache Invalidation'],
-    placeholder: true,
     githubUrl: null,
   },
 ]

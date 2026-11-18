@@ -36,7 +36,7 @@ export function ThemeToggle() {
   useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme
     const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')
-    if (themeColor) themeColor.content = theme === 'dark' ? '#151515' : '#FAFAF8'
+    if (themeColor) themeColor.content = theme === 'dark' ? '#1d2021' : '#f9f5d7'
   }, [theme])
 
   useEffect(() => {

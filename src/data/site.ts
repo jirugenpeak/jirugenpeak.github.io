@@ -22,7 +22,7 @@ export const site: Site = {
   },
   resumeUrl: null,
   contacts: [
-    { label: 'GitHub', url: null },
+    { label: 'GitHub', url: 'https://github.com/jirugenpeak' },
     { label: 'LinkedIn', url: null },
     { label: 'Email', url: null },
   ],

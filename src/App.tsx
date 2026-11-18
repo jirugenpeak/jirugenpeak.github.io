@@ -8,7 +8,6 @@ import { site } from './data/site'
 
 export default function App() {
   const now = useCurrentMinute()
-  const contactsPending = site.contacts.every((contact) => !contact.url)
 
   return (
     <div className="page">
@@ -41,24 +40,22 @@ export default function App() {
           <ActivityLines now={now} />
         </section>
         <Projects />
+        <Writing />
       </main>
 
-      <footer>
-        <Writing />
-        <section className="document-section contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">Contact</h2>
-          <div className="contact-details flex flex-wrap items-baseline">
-            <ul className="contact-links flex flex-wrap items-baseline">
-              {site.contacts.map(({ label, url }) => (
-                <li key={label}><ResourceLink label={label} url={url} groupStatus={contactsPending} /></li>
-              ))}
-            </ul>
-            {contactsPending && <small className="contact-status">Links pending</small>}
-          </div>
-        </section>
-        <div className="colophon flex flex-wrap items-baseline justify-between gap-2">
-          <p>© 2026 {site.name}</p>
+      <footer className="colophon">
+        <ul className="contact-links" aria-label="Contact">
+          {site.contacts.map(({ label, url }, index) => (
+            <li key={label}>
+              {index > 0 && <span aria-hidden="true">·</span>}
+              <ResourceLink label={label} url={url} showArrow={false} />
+            </li>
+          ))}
+        </ul>
+        <div className="footer-meta">
           <LocalClock now={now} />
+          <span aria-hidden="true">·</span>
+          <span>© 2026</span>
         </div>
       </footer>
     </div>

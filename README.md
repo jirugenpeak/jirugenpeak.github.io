@@ -26,7 +26,7 @@ The build checks TypeScript and writes the production files to `dist/`. To check
 | Edit | File | How |
 | --- | --- | --- |
 | Personal details and contact | `src/data/site.ts` | Edit the introduction and descriptor. Set the social URLs and a `mailto:` email link. For a local résumé, place the PDF in `public/` and set `resumeUrl` to its relative filename, such as `resume.pdf`. |
-| Selected projects | `src/data/projects.ts` | The examples illustrate architecture trade-offs. Replace each with a real title, one short trade-off or measured result, and stack keywords. Set `githubUrl` and `blogUrl` to activate their reserved links, then remove `placeholder: true`. The optional `liveUrl` adds a demo link. |
+| Selected projects | `src/data/projects.ts` | The examples illustrate architecture trade-offs. Replace each with a real title, one short trade-off or measured result, and stack keywords. Set `githubUrl` and `blogUrl` to activate their reserved links. The optional `liveUrl` adds a demo link. |
 | Writing | `src/data/posts.ts` | Add a title, ISO date (`YYYY-MM-DD`), description, and unique slug. The first entry replaces the empty state with a compact list. Set the optional `url` to a published article or a relative HTML file in `public/`. Each row also has a `#post-<slug>` anchor. |
 
 ## GitHub and Spotify activity

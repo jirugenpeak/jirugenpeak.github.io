@@ -10,24 +10,24 @@ export function Projects() {
         {projects.map((project) => (
           <li className="project-entry" key={project.id} id={project.id}>
             <div className="project-heading">
-              <h3>{project.title}{project.placeholder && <small className="example-label">Placeholder</small>}</h3>
+              <h3>{project.title}</h3>
               <div className="project-links">
-                <ResourceLink label="GitHub" url={project.githubUrl} accessibleName={`${project.title} on GitHub`} groupStatus showArrow />
-                <ResourceLink label="Blog" url={project.blogUrl ?? null} accessibleName={`Blog post about ${project.title}`} groupStatus showArrow />
+                <ResourceLink label="GitHub" url={project.githubUrl} accessibleName={`${project.title} on GitHub`} showArrow />
+                <ResourceLink label="Blog" url={project.blogUrl ?? null} accessibleName={`Blog post about ${project.title}`} showArrow />
                 {project.liveUrl && (
                   <ResourceLink label="Demo" url={project.liveUrl} accessibleName={`Live demo of ${project.title}`} />
                 )}
               </div>
             </div>
             <p className="entry-description">{project.description}</p>
-            <p className="technologies">
-              {project.technologies.length ? project.technologies.map((term, index) => (
+            {project.technologies.length > 0 && <p className="technologies">
+              {project.technologies.map((term, index) => (
                 <Fragment key={term}>
                   {index > 0 && ' · '}
                   <span className="inline-block max-w-full">{term}</span>
                 </Fragment>
-              )) : 'Stack pending'}
-            </p>
+              ))}
+            </p>}
           </li>
         ))}
       </ul>
