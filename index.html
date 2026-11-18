@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FAFAF8" />
+    <script>
+      // Apply the visitor's choice before the browser paints the page.
+      let savedTheme;
+      try {
+        savedTheme = localStorage.getItem('portfolio-theme');
+      } catch {
+        // The system preference also works when storage is unavailable.
+      }
+      const dark = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#151515' : '#FAFAF8';
+    </script>
+    <style>
+      html { background-color: #FAFAF8; color-scheme: light; }
+      html[data-theme="dark"] { background-color: #151515; color-scheme: dark; }
+    </style>
+    <title>Aditya Sharma — Software Engineer</title>
+    <meta name="description" content="Personal website of Aditya Sharma, a software engineer interested in backend systems, data engineering, and building things." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aditya Sharma — Software Engineer" />
+    <meta property="og:description" content="Personal website of Aditya Sharma, a software engineer interested in backend systems, data engineering, and building things." />
+    <!-- Add og:image when a social preview image is available. -->
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
