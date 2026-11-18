@@ -55,6 +55,6 @@ Each push to `main` installs the locked dependencies, checks lint and types, bui
 
 The default Vite base is `/` for a personal Pages site. The workflow reads the actual base path from GitHub Pages, so a project site also works under `/repository-name/`. To build locally for a project path, run `VITE_BASE_PATH=/repository-name/ npm run build`.
 
-The configured Git remote is `jirugenpeak/aditya.github.io`, which corresponds to the default project-site path `/aditya.github.io/`. To publish at the root of the account’s GitHub Pages domain, use a repository named `jirugenpeak.github.io`. [GitHub Pages site types](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#types-of-github-pages-sites)
+The repository `jirugenpeak/jirugenpeak.github.io` publishes at the root of the account’s Pages domain. [Live portfolio](https://jirugenpeak.github.io/)
 
 The workflow also supplies the public Pages URL as `VITE_SITE_URL` for the canonical link and Open Graph URL. To include those tags in a local build, set `VITE_SITE_URL` to the full published URL, including any project path.
