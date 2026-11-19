@@ -171,6 +171,26 @@ h1 {
   text-decoration-color: currentColor;
 }
 
+.link-arrow-motion > .link-arrow {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .link-arrow-motion > .link-arrow {
+    transition: transform 150ms ease-out;
+  }
+
+  .link-arrow-motion:focus-visible > .link-arrow {
+    transform: translate(2px, -2px);
+  }
+
+  @media (hover: hover) {
+    .link-arrow-motion:hover > .link-arrow {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
 .activity-lines {
   margin-top: .8125rem;
   color: var(--secondary);

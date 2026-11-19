@@ -33,8 +33,8 @@ export default function App() {
           </p>
           <p className="intro-copy">
             {site.intro.work}{' '}
-            <a className="employer-link" href={site.intro.employerUrl}>
-              {site.intro.employer}<span aria-hidden="true"> ↗</span>
+            <a className="employer-link link-arrow-motion" href={site.intro.employerUrl}>
+              {site.intro.employer}{' '}<span className="link-arrow" aria-hidden="true">↗</span>
             </a>. {site.intro.about}
           </p>
           <ActivityLines now={now} />

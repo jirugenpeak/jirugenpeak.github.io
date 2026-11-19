@@ -5,15 +5,17 @@ type ResourceLinkProps = {
   url: string | null
   accessibleName?: string
   showArrow?: boolean
+  animateArrow?: boolean
 }
 
-export function ResourceLink({ label, url, accessibleName, showArrow }: ResourceLinkProps) {
+export function ResourceLink({ label, url, accessibleName, showArrow, animateArrow }: ResourceLinkProps) {
+  const motionClass = animateArrow ? ' link-arrow-motion' : ''
   const arrow = (showArrow ?? /^(https?:)?\/\//i.test(url ?? '')) && (
-    <ArrowUpRight size={13} aria-hidden="true" />
+    <ArrowUpRight className="link-arrow" size={13} aria-hidden="true" />
   )
   if (!url) {
     return (
-      <span className="pending-link" role="link" aria-disabled="true"
+      <span className={`pending-link${motionClass}`} role="link" aria-disabled="true"
         aria-label={accessibleName ?? label}>
         {label}{arrow}
       </span>
@@ -21,7 +23,7 @@ export function ResourceLink({ label, url, accessibleName, showArrow }: Resource
   }
 
   return (
-    <a className="resource-link" href={url} aria-label={accessibleName}>
+    <a className={`resource-link${motionClass}`} href={url} aria-label={accessibleName}>
       {label}
       {arrow}
     </a>
