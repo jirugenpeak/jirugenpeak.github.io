@@ -12,8 +12,8 @@ export function Projects() {
             <div className="project-heading">
               <h3>{project.title}</h3>
               <div className="project-links">
-                <ResourceLink label="GitHub" url={project.githubUrl} accessibleName={`${project.title} on GitHub`} showArrow animateArrow />
-                <ResourceLink label="Blog" url={project.blogUrl ?? null} accessibleName={`Blog post about ${project.title}`} showArrow animateArrow />
+                <ResourceLink label="GitHub" url={project.githubUrl} accessibleName={`${project.title} on GitHub`} showArrow />
+                <ResourceLink label="Blog" url={project.blogUrl ?? null} accessibleName={`Blog post about ${project.title}`} showArrow />
                 {project.liveUrl && (
                   <ResourceLink label="Demo" url={project.liveUrl} accessibleName={`Live demo of ${project.title}`} />
                 )}
